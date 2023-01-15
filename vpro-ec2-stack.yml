@@ -58,7 +58,7 @@
     - name: Update vproStack-sg with its own SG ID
       ec2_group:
         name: vproStack-sg
-        description: Allow all traffic within same sg
+        description: Allow port 22 from everywhere and all ports within sg
         region: "{{region}}"
         vpc_id: "{{vpcid}}"
         purge_rules: no

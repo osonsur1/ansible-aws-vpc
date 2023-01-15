@@ -54,3 +54,14 @@
             to_port: 22
             group_id: "{{BastionSGid}}"
       register: vproStackSG_out
+
+    - name: Update vproStack-sg with its own SG ID
+      ec2_group:
+        name: vproStack-sg
+        description: Allow all traffic within same sg
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: all
+            group_id: "{{vproStackSG_out.group_id}}"

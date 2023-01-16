@@ -1,0 +1,78 @@
+2023-01-16 04:38:45,246 p=1176 u=ubuntu n=ansible | PLAY [Generate artifact, copy artifact & sql file to files directory] ************************************************************************************************************************
+2023-01-16 04:38:45,265 p=1176 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************
+2023-01-16 04:38:46,683 p=1176 u=ubuntu n=ansible | ok: [localhost]
+2023-01-16 04:38:46,700 p=1176 u=ubuntu n=ansible | TASK [Install jdk, maven, git] ***************************************************************************************************************************************************************
+2023-01-16 04:38:55,302 p=1176 u=ubuntu n=ansible | ok: [localhost] => (item=git)
+2023-01-16 04:39:35,627 p=1176 u=ubuntu n=ansible | changed: [localhost] => (item=openjdk-8-jdk)
+2023-01-16 04:39:44,801 p=1176 u=ubuntu n=ansible | changed: [localhost] => (item=maven)
+2023-01-16 04:39:44,815 p=1176 u=ubuntu n=ansible | TASK [Clone source code from GitHub] *********************************************************************************************************************************************************
+2023-01-16 04:39:48,924 p=1176 u=ubuntu n=ansible | changed: [localhost]
+2023-01-16 04:39:48,937 p=1176 u=ubuntu n=ansible | TASK [mvn install command to build artifact] *************************************************************************************************************************************************
+2023-01-16 04:40:31,083 p=1176 u=ubuntu n=ansible | changed: [localhost]
+2023-01-16 04:40:31,127 p=1176 u=ubuntu n=ansible | TASK [Copy artifacts to files directory] *****************************************************************************************************************************************************
+2023-01-16 04:40:32,312 p=1176 u=ubuntu n=ansible | changed: [localhost] => (item=/home/ubuntu/ansible-aws-vpc/provision-stack/Vprofile-repo/target/vprofile-v2.war)
+2023-01-16 04:40:32,324 p=1176 u=ubuntu n=ansible | TASK [Copy SQL file to files directory] ******************************************************************************************************************************************************
+2023-01-16 04:40:32,759 p=1176 u=ubuntu n=ansible | changed: [localhost]
+2023-01-16 04:40:32,775 p=1176 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************
+2023-01-16 04:40:32,775 p=1176 u=ubuntu n=ansible | localhost                  : ok=6    changed=5    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:49:45,846 p=6077 u=ubuntu n=ansible | PLAY [Set host to IP mapping in /etc/hosts file of all the instances in the stack] ***********************************************************************************************************
+2023-01-16 04:49:45,870 p=6077 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************
+2023-01-16 04:49:45,979 p=6077 u=ubuntu n=ansible | [WARNING]: While constructing a mapping from /home/ubuntu/ansible-aws-vpc/provision-stack/group_vars/dbsrvgrp, line 1, column 1, found a duplicate dict key (dbuser). Using last defined
+value only.
+
+2023-01-16 04:49:47,855 p=6077 u=ubuntu n=ansible | ok: [web01]
+2023-01-16 04:49:48,075 p=6077 u=ubuntu n=ansible | ok: [cntl]
+2023-01-16 04:49:48,466 p=6077 u=ubuntu n=ansible | ok: [app01]
+2023-01-16 04:49:48,512 p=6077 u=ubuntu n=ansible | ok: [rmq01]
+2023-01-16 04:49:48,531 p=6077 u=ubuntu n=ansible | ok: [mc01]
+2023-01-16 04:49:50,425 p=6077 u=ubuntu n=ansible | ok: [db01]
+2023-01-16 04:49:50,442 p=6077 u=ubuntu n=ansible | TASK [Import Host Setup Variables] ***********************************************************************************************************************************************************
+2023-01-16 04:49:50,493 p=6077 u=ubuntu n=ansible | ok: [cntl]
+2023-01-16 04:49:50,514 p=6077 u=ubuntu n=ansible | ok: [web01]
+2023-01-16 04:49:50,538 p=6077 u=ubuntu n=ansible | ok: [app01]
+2023-01-16 04:49:50,559 p=6077 u=ubuntu n=ansible | ok: [rmq01]
+2023-01-16 04:49:50,559 p=6077 u=ubuntu n=ansible | ok: [mc01]
+2023-01-16 04:49:50,569 p=6077 u=ubuntu n=ansible | ok: [db01]
+2023-01-16 04:49:50,577 p=6077 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ***************************************************************************************************************************************************
+2023-01-16 04:49:51,394 p=6077 u=ubuntu n=ansible | changed: [rmq01]
+2023-01-16 04:49:51,398 p=6077 u=ubuntu n=ansible | changed: [app01]
+2023-01-16 04:49:51,398 p=6077 u=ubuntu n=ansible | changed: [mc01]
+2023-01-16 04:49:51,398 p=6077 u=ubuntu n=ansible | changed: [web01]
+2023-01-16 04:49:51,451 p=6077 u=ubuntu n=ansible | changed: [cntl]
+2023-01-16 04:49:51,712 p=6077 u=ubuntu n=ansible | changed: [db01]
+2023-01-16 04:49:51,730 p=6077 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************
+2023-01-16 04:49:51,730 p=6077 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:49:51,731 p=6077 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:49:51,731 p=6077 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:49:51,731 p=6077 u=ubuntu n=ansible | mc01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:49:51,731 p=6077 u=ubuntu n=ansible | rmq01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:49:51,731 p=6077 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:51:40,613 p=6346 u=ubuntu n=ansible | PLAY [Set host to IP mapping in /etc/hosts file of all the instances in the stack] ***********************************************************************************************************
+2023-01-16 04:51:40,623 p=6346 u=ubuntu n=ansible | TASK [Gathering Facts] ***********************************************************************************************************************************************************************
+2023-01-16 04:51:42,618 p=6346 u=ubuntu n=ansible | ok: [web01]
+2023-01-16 04:51:42,751 p=6346 u=ubuntu n=ansible | ok: [mc01]
+2023-01-16 04:51:42,759 p=6346 u=ubuntu n=ansible | ok: [app01]
+2023-01-16 04:51:42,760 p=6346 u=ubuntu n=ansible | ok: [rmq01]
+2023-01-16 04:51:42,782 p=6346 u=ubuntu n=ansible | ok: [cntl]
+2023-01-16 04:51:44,403 p=6346 u=ubuntu n=ansible | ok: [db01]
+2023-01-16 04:51:44,418 p=6346 u=ubuntu n=ansible | TASK [Import Host Setup Variables] ***********************************************************************************************************************************************************
+2023-01-16 04:51:44,465 p=6346 u=ubuntu n=ansible | ok: [cntl]
+2023-01-16 04:51:44,487 p=6346 u=ubuntu n=ansible | ok: [web01]
+2023-01-16 04:51:44,504 p=6346 u=ubuntu n=ansible | ok: [app01]
+2023-01-16 04:51:44,527 p=6346 u=ubuntu n=ansible | ok: [rmq01]
+2023-01-16 04:51:44,527 p=6346 u=ubuntu n=ansible | ok: [mc01]
+2023-01-16 04:51:44,536 p=6346 u=ubuntu n=ansible | ok: [db01]
+2023-01-16 04:51:44,545 p=6346 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ***************************************************************************************************************************************************
+2023-01-16 04:51:45,362 p=6346 u=ubuntu n=ansible | ok: [app01]
+2023-01-16 04:51:45,363 p=6346 u=ubuntu n=ansible | ok: [rmq01]
+2023-01-16 04:51:45,363 p=6346 u=ubuntu n=ansible | ok: [web01]
+2023-01-16 04:51:45,363 p=6346 u=ubuntu n=ansible | ok: [mc01]
+2023-01-16 04:51:45,414 p=6346 u=ubuntu n=ansible | ok: [cntl]
+2023-01-16 04:51:45,683 p=6346 u=ubuntu n=ansible | ok: [db01]
+2023-01-16 04:51:45,701 p=6346 u=ubuntu n=ansible | PLAY RECAP ***********************************************************************************************************************************************************************************
+2023-01-16 04:51:45,702 p=6346 u=ubuntu n=ansible | app01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:51:45,702 p=6346 u=ubuntu n=ansible | cntl                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:51:45,702 p=6346 u=ubuntu n=ansible | db01                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:51:45,702 p=6346 u=ubuntu n=ansible | mc01                       : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:51:45,702 p=6346 u=ubuntu n=ansible | rmq01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-01-16 04:51:45,703 p=6346 u=ubuntu n=ansible | web01                      : ok=3    changed=0    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   

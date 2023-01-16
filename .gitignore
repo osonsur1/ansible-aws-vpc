@@ -1,2 +1,4 @@
 *.pem
 vpc-output_vars.*
+*.sql
+*.war
